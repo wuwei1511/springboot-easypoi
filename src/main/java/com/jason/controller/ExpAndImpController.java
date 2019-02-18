@@ -1,18 +1,20 @@
 package com.jason.controller;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.jason.entity.Person;
 import com.jason.util.ExpAndImpUtil;
+import jdk.nashorn.internal.parser.JSONParser;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang3.time.DateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Description:
@@ -24,10 +26,11 @@ import java.util.List;
 public class ExpAndImpController {
     Logger logger = LoggerFactory.getLogger(ExpAndImpController.class);
 
-
+    /**
+     * 从数据库获取需要导出的数据到excel
+     */
     @RequestMapping("export")
     public void export(HttpServletResponse response){
-
         //模拟从数据库获取需要导出的数据
         List<Person> personList = new ArrayList<>();
         Person person1 = new Person("路飞","1",new Date());
@@ -43,26 +46,26 @@ public class ExpAndImpController {
         ExpAndImpUtil.exportExcel(personList,"花名册","草帽一伙",Person.class,"海贼王.xls",response);
     }
 
+    /**
+     * 导入excel
+     */
     @RequestMapping("importExcel")
-    public void importExcel(){
-//        String filePath = "C:/Users/MAIBENBEN/Desktop/海贼王.xls";
-//        String filePath = "F:/prodemo/springboot-easypoi/src/main/resources/impTemp/海贼王.xls";
-        String filePath = "F:/海贼王.xls";
-        File f = new File(filePath);
-        try {
-            FileInputStream fis = new FileInputStream(f);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
+    @ResponseBody
+    public Map<String, Object> importExcel(){
+        Map map = new HashMap();
+        String filePath = "F:\\prodemo\\testFiles\\海贼王.xls";
         //解析excel
         List<Person> personList = ExpAndImpUtil.importExcel(filePath,1,1,Person.class);
         //也可以使用MultipartFile,使用 ExpAndImpUtil.importExcel(MultipartFile file, Integer titleRows, Integer headerRows, Class<T> pojoClass)导入
-        logger.info(personList.toString());
+        logger.info(ReflectionToStringBuilder.toString(personList));
         System.out.println("导入数据一共【"+personList.size()+"】行");
 
         //TODO 保存数据库
         //...
+
+        //TODO 返回数据给调用方
+        map.put("data", personList);
+        return map;
     }
 
 }

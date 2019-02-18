@@ -19,10 +19,11 @@ import java.util.List;
 @SpringBootTest
 public class DemoApplicationTests {
 
+    /**
+     * 拷贝测试ok
+     */
     @Test
     public void contextLoads() {
-//        String origFile = "C:\\Users\\Desktop\\1.jpg";
-//        String copyFile = "C:\\Users\\Desktop\\2.jpg";
         String origFile = "F:/海贼王.xls";
 //        String copyFile = "F:/海贼王2.xls";
         String copyFile = "D:/exportTemp.xls";//拷贝到其它盘并重命名
@@ -32,6 +33,9 @@ public class DemoApplicationTests {
         System.out.println("拷贝图片花费时间为：" + (endTime - startTime));
     }
 
+    /**
+     * 导入测试ok
+     */
     @Test
     public void importExcel() {
         File file = new File("F:\\prodemo\\testFiles\\海贼王.xls");
@@ -48,7 +52,7 @@ public class DemoApplicationTests {
     }
 
     /**
-     * 导入xls测试
+     * 导入xls测试--ok
      */
     @Test
     public void importTest() {
