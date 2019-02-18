@@ -2,6 +2,11 @@
 
 ==============================================================================
 
-EasyPoi教程V1.0文档：http://easypoi.mydoc.io/#text_226083
+EasyPoi教程V1.0文档：
+http://easypoi.mydoc.io/#text_226083
+https://opensource.afterturn.cn/doc/easypoi.html
+
+参考项目：
+https://gitee.com/lemur/easypoi
 
 ==============================================================================
