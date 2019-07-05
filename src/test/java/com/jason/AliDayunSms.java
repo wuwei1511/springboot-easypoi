@@ -67,7 +67,7 @@ public class AliDayunSms {
             //请求成功
             System.out.println("=====success====");
         } else {
-            System.out.println("=====fail=======");
+            System.out.println("=====fail======");
         }
     }
 

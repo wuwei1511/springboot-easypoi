@@ -15,6 +15,7 @@ import java.util.Date;
 
 /**
  * 阿里云短信接入
+ * 官方接口文档（新）：https://api.aliyun.com/new?spm=a2c4g.11186623.2.13.9f6919d9lgfANm#/?product=Dysmsapi&api=SendSms
  */
 public class SmsUtil {
     //产品名称:云通信短信API产品,开发者无需替换
@@ -24,8 +25,8 @@ public class SmsUtil {
 
     // TODO 此处需要替换成开发者自己的AK(在阿里云访问控制台寻找)
 
-    static final String accessKeyId = "qewrgb";
-    static final String accessKeySecret = "agagag";
+    static final String accessKeyId = "LTAIsP7cKWddkEad";
+    static final String accessKeySecret = "BfiIDDQr69yvrU1Oer9YyoAXgAH2ui";
 
     public static SendSmsResponse sendSms(String product, String domain, String accessKeyId, String accessKeySecret, String mobile, String signName, String templateCode, String params) throws ClientException {
 
