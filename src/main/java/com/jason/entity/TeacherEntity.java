@@ -6,8 +6,8 @@ import cn.afterturn.easypoi.excel.annotation.ExcelTarget;
 /**
  * @Title: Entity
  * @Description: 课程老师
- * @author JueYue
- *   2013-08-31 22:52:17
+ * @author jason
+ *   2019-08-31 22:52:17
  * @version V1.0
  * 
  */

@@ -5,11 +5,11 @@ import cn.afterturn.easypoi.excel.annotation.Excel;
 import java.util.Date;
 
 /**
- * @author JueYue
+ * @author jason
  * @version V1.0
  * @Title: Entity
  * @Description: 学生
- *   2013-08-31 22:53:34
+ *   2019-08-31 22:53:34
  */
 @SuppressWarnings("serial")
 public class StudentEntity implements java.io.Serializable {

@@ -38,7 +38,7 @@ public class DemoApplicationTests {
      */
     @Test
     public void importExcel() {
-        File file = new File("F:\\prodemo\\testFiles\\海贼王.xls");
+        File file = new File("F:\\prodemo\\导入表格测试.xlsx");
 //        File file = new File(FileUtilTest.getWebRootPath("F:\\prodemo\\testFiles\\海贼王.xls"));
         try {
             ImportParams importParams = new ImportParams();

@@ -10,8 +10,8 @@ import java.util.List;
 /**
  * @Title: Entity
  * @Description: 课程
- * @author JueYue
- *   2013-08-31 22:53:07
+ * @author jason
+ *   2019-08-31 22:53:07
  * @version V1.0
  * 
  */
